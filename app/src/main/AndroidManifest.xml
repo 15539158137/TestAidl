@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xlkx.testaidl">
+
+    <application
+        android:name=".Appapplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".CrashActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".TwoActivity" />
+        <activity
+            android:name=".user_eventbus.TestActivity_EventBus"
+         >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service_brocast.Service_Bind"
+            android:enabled="true"
+            android:exported="true"
+            android:label="普通服务"
+            android:process=":remote" />
+        <service
+            android:name=".service_brocast.MyService_Time"
+            android:enabled="true"
+            android:exported="true"
+            android:label="时间服务"
+            android:process=":remote1" />
+        <service
+            android:name=".use_messenger.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="普通服务1"
+            android:process=":remote2" />
+        <service
+            android:name=".user_eventbus.Service_EventBus"
+            android:enabled="true"
+            android:exported="true"
+            android:label="普通服务2"
+           />
+
+        <receiver android:name=".service_brocast.MyBroadcastReceiver" />
+    </application>
+
+</manifest>
